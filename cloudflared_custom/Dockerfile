@@ -1,0 +1,1 @@
+FROM ghcr.io/hassio-addons/cloudflared/{arch}

@@ -1,0 +1,23 @@
+name: Cloudflared Custom
+version: 1.0
+slug: cloudflared_custom
+description: Cloudflared tunnel com network: host
+startup: services
+boot: auto
+hassio_api: true
+host_network: true
+
+options:
+  tunnel_token: ""
+  external_hostname: ""
+  additional_hosts: []
+  catch_all_service: ""
+
+schema:
+  tunnel_token: str
+  external_hostname: str
+  additional_hosts:
+    - str
+  catch_all_service: str
+
+image: "ghcr.io/hassio-addons/cloudflared/{arch}"
