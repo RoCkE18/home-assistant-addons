@@ -1,10 +1,12 @@
-ARG BUILD_FROM
-FROM ${BUILD_FROM}
+FROM debian:bullseye-slim
 
 ENV LANG C.UTF-8
 
-# Copiar script de arranque
+RUN apt-get update && \
+    apt-get install -y curl && \
+    apt-get clean
+
 COPY run.sh /run.sh
-RUN chmod a+x /run.sh
+RUN chmod +x /run.sh
 
 CMD [ "/run.sh" ]
