@@ -21,3 +21,8 @@ schema:
   catch_all_service: str
 
 image: "ghcr.io/hassio-addons/cloudflared/{arch}"
+
+arch:
+  - aarch64
+  - amd64
+  - armv7
