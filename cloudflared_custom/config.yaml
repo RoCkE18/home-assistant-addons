@@ -1,7 +1,7 @@
-name: Cloudflared Custom
+name: Cloudflared Custom v2
 version: 1.0
-slug: cloudflared_custom
-description: "Cloudflared tunnel com network: host"
+slug: cloudflared_custom_v2
+description: Cloudflared tunnel com network: host
 startup: services
 boot: auto
 hassio_api: true
