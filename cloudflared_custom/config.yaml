@@ -20,5 +20,4 @@ schema:
     - str
   catch_all_service: str
 
-build_from:
-  aarch64: "ghcr.io/home-assistant/aarch64-base:latest"
+image: local/cloudflared_custom_v2
