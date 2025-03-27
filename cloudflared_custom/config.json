@@ -19,5 +19,8 @@
     "additional_hosts": ["str"],
     "catch_all_service": "str"
   },
-  "arch": ["aarch64", "amd64", "armv7"]
+  "arch": ["aarch64", "amd64", "armv7"],
+  "environment": {
+    "TUNNEL_TOKEN": "!tunnel_token"
+  }
 }
