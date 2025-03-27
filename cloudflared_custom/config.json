@@ -21,6 +21,6 @@
   },
   "arch": ["aarch64", "amd64", "armv7"],
   "environment": {
-    "TUNNEL_TOKEN": "!tunnel_token"
+    "TUNNEL_TOKEN": "!!tunnel_token"
   }
 }
