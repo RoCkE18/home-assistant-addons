@@ -1,7 +1,7 @@
 name: Cloudflared Custom
 version: 1.0
 slug: cloudflared_custom
-description: Cloudflared tunnel com network: host
+description: "Cloudflared tunnel com network: host"
 startup: services
 boot: auto
 hassio_api: true
