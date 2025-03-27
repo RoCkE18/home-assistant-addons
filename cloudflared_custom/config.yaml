@@ -20,7 +20,7 @@ schema:
     - str
   catch_all_service: str
 
-#image: "ghcr.io/hassio-addons/cloudflared/{arch}"
+image: local/cloudflared_custom_v2
 
 arch:
   - aarch64
