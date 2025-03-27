@@ -3,4 +3,8 @@ FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
 
-CMD cloudflared tunnel run --token "${TUNNEL_TOKEN}"
+# Copiar script de arranque
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
+
+CMD [ "/run.sh" ]
