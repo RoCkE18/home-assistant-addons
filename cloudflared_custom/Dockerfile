@@ -1,1 +1,1 @@
-FROM ghcr.io/hassio-addons/cloudflared/{arch}
+FROM cloudflare/cloudflared:latest
