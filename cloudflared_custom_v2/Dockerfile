@@ -2,18 +2,14 @@ FROM debian:bullseye-slim
 
 ENV LANG C.UTF-8
 
-ARG TARGETARCH
-
-# Instalar dependências e cloudflared de acordo com a arquitetura
+# Instalar dependências e binário multi-arch
 RUN apt-get update && \
-    apt-get install -y wget ca-certificates && \
-    ARCH=$( \
-      if [ "${TARGETARCH}" = "amd64" ]; then echo "amd64"; \
-      elif [ "${TARGETARCH}" = "arm64" ]; then echo "arm64"; \
-      elif [ "${TARGETARCH}" = "arm" ]; then echo "arm"; \
-      else echo "amd64"; fi ) && \
-    wget -O /usr/local/bin/cloudflared "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-${ARCH}" && \
-    chmod +x /usr/local/bin/cloudflared
+    apt-get install -y wget ca-certificates tar && \
+    wget -O cloudflared.tgz https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux.tgz && \
+    tar -xvzf cloudflared.tgz && \
+    mv cloudflared /usr/local/bin/cloudflared && \
+    chmod +x /usr/local/bin/cloudflared && \
+    rm cloudflared.tgz
 
 # Copiar script de arranque
 COPY run.sh /run.sh
