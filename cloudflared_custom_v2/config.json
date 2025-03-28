@@ -6,22 +6,5 @@
   "startup": "services",
   "boot": "auto",
   "hassio_api": true,
-  "host_network": true,
-  "options": {
-    "tunnel_token": "",
-    "external_hostname": "",
-    "additional_hosts": [],
-    "catch_all_service": ""
-  },
-  "schema": {
-    "tunnel_token": "str",
-    "external_hostname": "str",
-    "additional_hosts": ["str"],
-    "catch_all_service": "str"
-  },
-  "arch": ["aarch64", "amd64", "armv7"],
-  "environment": {
-    "TUNNEL_TOKEN": "!tunnel_token"
-  },
-  "image": "local/cloudflared_custom_v2"
+  "host_network": true
 }
