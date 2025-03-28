@@ -23,7 +23,8 @@ schema:
   tunnel_token: str
   external_hostname: str
   additional_hosts:
-    - str
+    - hostname: str
+      service: str
   catch_all_service: str
 
 environment:
