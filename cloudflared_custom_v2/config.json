@@ -24,4 +24,5 @@
     "TUNNEL_TOKEN": "!tunnel_token"
   },
   "image": "local/cloudflared_custom_v2"
+  "build": true
 }
