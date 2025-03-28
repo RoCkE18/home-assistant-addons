@@ -1,3 +1,6 @@
 name: RoCkE18 Add-ons
 url: https://github.com/RoCkE18/home-assistant-addons
-maintainer: Bruno Roque <geral@brunoroque.pt>
+maintainer: Bruno Roque <teu@email.com>
+addons:
+  - cloudflared_custom_v2
+  - cloudflared_custom_v3
