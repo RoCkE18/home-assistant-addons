@@ -23,6 +23,9 @@
   "environment": {
     "TUNNEL_TOKEN": "!tunnel_token"
   },
-  "image": "local/cloudflared_custom_v2",
-  "build": true
+  "build_from": {
+    "aarch64": "ghcr.io/home-assistant/aarch64-base:latest",
+    "amd64": "ghcr.io/home-assistant/amd64-base:latest",
+    "armv7": "ghcr.io/home-assistant/armv7-base:latest"
+  }
 }
