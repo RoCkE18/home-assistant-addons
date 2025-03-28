@@ -2,14 +2,19 @@ FROM debian:bullseye-slim
 
 ENV LANG C.UTF-8
 
-# Instalar dependências e binário multi-arch
+# Instalar dependências e cloudflared correto
 RUN apt-get update && \
     apt-get install -y wget ca-certificates tar && \
-    wget -O cloudflared.tgz https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux.tgz && \
-    tar -xvzf cloudflared.tgz && \
-    mv cloudflared /usr/local/bin/cloudflared && \
-    chmod +x /usr/local/bin/cloudflared && \
-    rm cloudflared.tgz
+    ARCH=$(dpkg --print-architecture) && \
+    echo "Detected arch: $ARCH" && \
+    case "$ARCH" in \
+      amd64) ARCH_DL="amd64" ;; \
+      arm64) ARCH_DL="arm64" ;; \
+      armhf) ARCH_DL="arm" ;; \
+      *) echo "Unsupported arch: $ARCH" && exit 1 ;; \
+    esac && \
+    wget -O /usr/local/bin/cloudflared "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-$ARCH_DL" && \
+    chmod +x /usr/local/bin/cloudflared
 
 # Copiar script de arranque
 COPY run.sh /run.sh
