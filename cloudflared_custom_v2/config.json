@@ -1,6 +1,11 @@
 {
   "name": "Cloudflared Custom v2",
-  "version": "1.0",
   "slug": "cloudflared_custom_v2",
+  "description": "Cloudflared tunnel com network: host",
+  "version": "1.0",
+  "startup": "services",
+  "boot": "auto",
+  "hassio_api": true,
+  "host_network": true,
   "image": "local/cloudflared_custom_v2"
 }
