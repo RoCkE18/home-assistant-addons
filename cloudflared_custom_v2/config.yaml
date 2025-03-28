@@ -29,4 +29,3 @@ build_from:
   aarch64: "debian:bullseye-slim"
   amd64: "debian:bullseye-slim"
   armv7: "debian:bullseye-slim"
-
