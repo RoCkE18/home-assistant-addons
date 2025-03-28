@@ -2,9 +2,9 @@ FROM debian:bullseye-slim
 
 ENV LANG C.UTF-8
 
-# Instalar dependências e cloudflared correto
+# Instalar dependências, incluindo jq
 RUN apt-get update && \
-    apt-get install -y wget ca-certificates tar && \
+    apt-get install -y wget ca-certificates tar jq && \
     ARCH=$(dpkg --print-architecture) && \
     echo "Detected arch: $ARCH" && \
     case "$ARCH" in \
