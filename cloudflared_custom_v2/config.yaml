@@ -2,10 +2,16 @@ name: Cloudflared Custom v2
 version: 1.0
 slug: cloudflared_custom_v2
 description: "Cloudflared tunnel com network: host"
+url: "https://github.com/RoCkE18/home-assistant-addons/tree/main/cloudflared_custom_v2"
 startup: services
 boot: auto
 hassio_api: true
 host_network: true
+
+arch:
+  - aarch64
+  - amd64
+  - armv7
 
 options:
   tunnel_token: ""
