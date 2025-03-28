@@ -21,7 +21,7 @@ schema:
   catch_all_service: str
 
 environment:
-  TUNNEL_TOKEN: "!tunnel_token"
+  TUNNEL_TOKEN: "!!tunnel_token"
 
 image: local/cloudflared_custom_v2
 
